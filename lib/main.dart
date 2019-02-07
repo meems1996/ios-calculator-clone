@@ -1,7 +1,10 @@
+// import the Material package to be used for the design 
 import 'package:flutter/material.dart';
 
+// the main constructor running the app 
 void main() => runApp(new Calculator());
 
+// Stateless Widget class for the app 
 class Calculator extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -12,10 +15,12 @@ class Calculator extends StatelessWidget{
   }
 }
 
+// StatefulWudget class for the app 
 class Calc extends StatefulWidget {
   CalcState createState() => CalcState();
 }
 
+// UI set up in this CalcState class
 class CalcState extends State<Calc> {
 
   // button widget
