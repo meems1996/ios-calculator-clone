@@ -2,7 +2,7 @@
 
 ### A new Flutter project. 
 
-<img src="screenshot.png" width="100" height="200">
+<img src="screenshot.png" width="300" height="400">
 
 
 
