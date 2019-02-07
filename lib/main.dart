@@ -152,21 +152,25 @@ class CalcState extends State<Calc> {
       finalResult = '';
       opr = '';
       preOpr = '';
-    } else if (opr == '=' && preOpr == '=') {
-
+    } else if (opr == '=' && btnValue == '=') {
+      if (preOpr == '+') {
+        finalResult = add();
+      }
     }
     else if (btnValue == '+' || btnValue == '-' || btnValue == '*' || btnValue == '/' || btnValue == '=') {
       if (one == 0) {
-        one = result;
+        one = int.parse(result);
       } else {
-        two = result;
+        two = int.parse(result);
       }
 
       if(opr == '+') {
-        result = (one + two).toString();
-        finalResult = result;
-        one = int.parse(result);
+        finalResult = add();
       }
+
+      preOpr = opr;
+      opr = btnValue;
+      result = '';
     }
     else {
       result = result + btnValue;
@@ -176,5 +180,12 @@ class CalcState extends State<Calc> {
     setState(() {
       text = finalResult;
     });
+  }
+
+  String add() {
+    result = (one + two).toString();
+    one = int.parse(result);
+    return result;
+    
   }
 }
